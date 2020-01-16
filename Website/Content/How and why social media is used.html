@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #4E5869;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
+.container {
+	width: 80%;
+	max-width: 1260px;/* a max-width may be desirable to keep this layout from getting too wide on a large monitor. This keeps line length more readable. IE6 does not respect this declaration. */
+	min-width: 780px;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout. It is not needed if you set the .container's width to 100%. */
+	overflow: hidden; /* this declaration makes the .container clear all floated columns within it. */
+	background-color: #A8BDBC;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 20%;
+	background: #93A5C4;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 80%;
+	float: left;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	text-decoration: none;
+	background: #8090AB;
+	color: #000;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #6F7D94;
+	color: #FFF;
+}
+
+/* ~~miscellaneous float/clear classes~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the overflow:hidden on the .container is removed */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
+ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
+</style>
+<![endif]--></head>
+
+<body>
+
+<div class="container">
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><a href="Homepage.html">Home page</a></li>
+      <li><a href="How and why social media is used.html">How social media is used</a></li>
+      <li><a href="How we use social media.html">How we will use social media</a></li>
+       <li><a href="Campaign.html">Campaign</a></li>
+      <li><a href="Contact us.html">Contact us</a></li>
+      <li><a href="http://enviro2k16.blogspot.co.uk/">Blogger</a></li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><img src="../Images/200w (1).gif" alt="" width="154" height="123" /></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><img src="../Images/imagesU6KGNF28.jpg" width="153" height="184" /></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+<p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+  <div class="content">
+    <p>&nbsp;</p>
+    <strong>
+    <h1><u>How and  why social media is used to promote business and services</u></h1>
+    </strong>
+    <p><strong> </strong> There are millions of users using  social media every day and not utilizing this number is a waste. Today Many  companies are taking advantage of these number over a whole variety of methods.<br />
+      Using as many social media's as  possible is one way as not everyone uses a specific social media. There are  many types of social media including:</p>
+    <p><strong>-Facebook:</strong> This is a website  where once you have signed up you can add friends and like other pages. For  companies making a page would be ideal along with a personal account which can  control the page. Once a page is created you can upload pictures and images.  You can update your status/post any piece of information. You can also share  and like other people content which will appear on your page.</p>
+    <p><strong>-Twitter:</strong> twitter is where once  an account created, you can follow other people. For businesses the account can  be created under the name of the business. Once this is done you can &ldquo;tweet&rdquo;  this is linked to the blue bird logo as birds make a tweeting sound. Twitter is  different as you have a 140-character limit, what this means is that your  tweets will be short. This is great as it can stop you from tweeting a boring  long speech. With this limit more people will likely read it as it will be  shorter and more engaging.</p>
+    <p><strong>-YouTube:</strong> YouTube is dominantly a  video site. This website allows users to upload videos. Once a business account  is created all you have to do is upload the video you wish. These videos can  then be shared among other social media&rsquo;s that you own and will increase the  view count. You can have people subscribe, this means they wish to view more of  your content.</p>
+    <p><strong>-Instagram:</strong> Instagram is a social  media that&rsquo;s created for people to share images.  This allows users to follow each other to  view their content. This is great to show off new products as professionally  made photographs can be shared and many people who are interested or like your  content can &ldquo;heart&rdquo; your photo and this image is shared among their own  followers. This also has a new feature enabling you to upload a picture but  only for 24 hours. What this in effect allows you to do is have promotional  offers available for 24 hours to reward your current followers.</p>
+    <p><strong>-Snapchat:</strong> snapchat is like the  feature on Instagram where photos are uploaded for 24 hours but that&rsquo;s it. They  also have a filter feature where they have special filters that can be applied  to your face. Snapchat for a business can be great to show off product earlier  on or just show some behind the scenes. As images are only up for 24 hours it&rsquo;s  not very useful to promote products. </p>
+    </p>
+    <p><strong><u>Why social media is used instead  of other forms of advertising and promotion of businesses and products?</u></strong></p>
+    <p> Social media is being used instead  for many reasons listed below:</p>
+    <ul>
+      <li>Social  media is free to access and to use. All that is required is registration and  the creation of your page. Most social media sites allow you to customize your  page which is a great feature to make it more user friendly and to attract more  people to visit it again. </li>
+      <li> Social media also have their own ads that can  be placed over many social media&rsquo;s every website has their own way of showing  these adverts. The great thing about these adverts is that some utilize SEO (search  engine optimisation), this enables the user to view ads that are specified for  that users and is derived from their search history, this allows companies to  show their adverts to people who may potentially be interested. This means that  people who have recently been searching for a certain product which you may  offer can then see your advert and is a potential customer. This targets the  correct target audience very effectively.</li>
+      <li>Newspapers  are no longer a major media outlet. It is so bad that some newspaper companies  give away their newspapers for free so that people will have a look at it as no  one will buy them. This wasn&rsquo;t always the case but as technology has progressed  less and less people look at newspapers as a source of media.</li>
+      <li>Billboards have substantially increased but not as  many people pay attention to them, or see them in the first place. An example  is the tube or bus; they have many ads placed but as of smart phones people  don&rsquo;t as much attention to them as they do to smart phones. Other bigger  billboards are seen but as many people drive they won&rsquo;t pay attention as they  concentrate on the road and isn&rsquo;t seen by as many people compared to the number  of people using social media every day. </li>
+      <li>Going to smart phones; this is where the majority  of people access their social media&rsquo;s as it&rsquo;s light, portable and convenient. </li>
+      <li>Another form of advertising is the radio. Now  everyone may have a radio in their cars but statistically there aren&rsquo;t as many  cars as there are people. Also many people tend to zone out when averts are  placed in the radios. There is an insignificant number of people who own a  radio but paying for ads to be played isn&rsquo;t worth the number of people who use  social media every day.</li></ul>
+    <!-- end .content -->
+  </div>
+  <!-- end .container --></div>
+</body>
+</html>
